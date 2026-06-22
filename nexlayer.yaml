@@ -1,0 +1,14 @@
+application:
+  name: dokploy
+  pods:
+  - name: app
+    image: dokploy/dokploy:latest
+    path: /
+    servicePorts:
+    - 3000
+    vars:
+      NEXT_PUBLIC_DOMAIN: relaxed-weasel-dokploy.cloud.nexlayer.ai
+    volumes:
+    - name: dokploy-data
+      mountPath: /etc/dokploy
+      size: 5Gi
