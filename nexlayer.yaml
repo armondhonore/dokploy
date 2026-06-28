@@ -2,7 +2,7 @@ application:
   name: dokploy
   pods:
   - name: app
-    image: dokploy/dokploy:latest
+    image: mirror.gcr.io/dokploy/dokploy:latest
     path: /
     servicePorts:
     - 3000
@@ -11,7 +11,7 @@ application:
       PORT: "3000"
       DATABASE_URL: postgres://dokploy:${POSTGRES_PASSWORD}@dokploy-postgres.pod:5432/dokploy
   - name: dokploy-postgres
-    image: postgres:16-alpine
+    image: mirror.gcr.io/library/postgres:16-alpine
     servicePorts:
     - 5432
     vars:
